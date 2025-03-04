@@ -140,10 +140,12 @@
                         <p>S.N. Road, Near BSF Camp, Cooch Behar, West Bengal</p>
                     </div>
                 </div>
-                <form class="contact-form">
-                    <input type="text" placeholder="Name" required>
-                    <input type="email" placeholder="Email" required>
-                    <textarea placeholder="Message" required></textarea>
+                <form class="contact-form" action="https://formsubmit.co/amanrck69@gmail.com" method="POST">
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <textarea name="message" placeholder="Message" required></textarea>
+                    <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
+                    <input type="hidden" name="_subject" value="New Portfolio Contact!">
                     <button type="submit" class="cta-button">Send Message</button>
                 </form>
             </div>

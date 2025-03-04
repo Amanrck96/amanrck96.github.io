@@ -19,9 +19,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(44, 62, 80, 0.95)';
+        navbar.style.background = 'rgba(26, 35, 126, 0.95)';
     } else {
-        navbar.style.background = 'rgba(44, 62, 80, 0.8)';
+        navbar.style.background = 'rgba(26, 35, 126, 0.8)';
     }
 });
 
@@ -29,10 +29,16 @@ window.addEventListener('scroll', function() {
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        // Add your form submission logic here
-        alert('Thank you for your message! I will get back to you soon.');
-        contactForm.reset();
+        const submitButton = this.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+        submitButton.innerHTML = 'Sending...';
+        
+        // Form will be handled by FormSubmit service
+        // This is just for UX feedback
+        setTimeout(() => {
+            submitButton.disabled = false;
+            submitButton.innerHTML = 'Send Message';
+        }, 2000);
     });
 }
 
