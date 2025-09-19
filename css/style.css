@@ -486,6 +486,21 @@ body {
     transform: translateY(-2px);
 }
 
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.download-button {
+    background: var(--success-color);
+}
+
+.download-button:hover {
+    background: #27ae60;
+}
+
 /* Footer */
 footer {
     background: var(--primary-color);
