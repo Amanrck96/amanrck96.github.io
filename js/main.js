@@ -1,17 +1,57 @@
-// Initialize AOS (Animate On Scroll)
+// Initialize AOS (Animate On Scroll) with enhanced animations
 AOS.init({
-    duration: 1000,
-    once: true,
-    offset: 100
+    duration: 800,
+    easing: 'ease-in-out',
+    once: false,
+    mirror: true,
+    offset: 100,
+    delay: 100
+});
+
+// Add animation classes to elements
+document.addEventListener('DOMContentLoaded', function() {
+    // Add animation to section headings
+    document.querySelectorAll('section h2').forEach((heading, index) => {
+        heading.setAttribute('data-aos', 'fade-down');
+        heading.setAttribute('data-aos-delay', (index * 100).toString());
+    });
+    
+    // Add animation to skill items
+    document.querySelectorAll('.skill-item').forEach((item, index) => {
+        item.setAttribute('data-aos', 'zoom-in');
+        item.setAttribute('data-aos-delay', (index * 50).toString());
+    });
+    
+    // Add animation to contact form
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.setAttribute('data-aos', 'fade-up');
+    }
 });
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
+        
+        // Handle home button click
+        if (this.getAttribute('href') === '#home') {
+            // Hide all sections except home
+            document.querySelectorAll('section:not(#home)').forEach(section => {
+                section.style.display = 'block';
+            });
+        }
+        
+        // Smooth scroll to section
         document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
         });
+        
+        // Close mobile menu if open
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        if (navbarCollapse.classList.contains('show')) {
+            navbarCollapse.classList.remove('show');
+        }
     });
 });
 
