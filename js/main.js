@@ -29,6 +29,7 @@ window.addEventListener('scroll', function() {
 function validateForm() {
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
+    const mobile = document.getElementById('mobile').value;
     const message = document.getElementById('message').value;
     
     if (name.trim() === '') {
@@ -44,6 +45,17 @@ function validateForm() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
         alert('Please enter a valid email address');
+        return false;
+    }
+    
+    if (mobile.trim() === '') {
+        alert('Please enter your mobile number');
+        return false;
+    }
+    
+    const mobileRegex = /^[0-9]{10}$/;
+    if (!mobileRegex.test(mobile)) {
+        alert('Please enter a valid 10-digit mobile number');
         return false;
     }
     
