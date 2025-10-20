@@ -29,8 +29,9 @@ function initAnimations() {
         heading.classList.add('animate-on-scroll');
     });
     
-    // Add animation to skill items
-    document.querySelectorAll('.skill-item, .skill-detail-card, .expertise-card, .project-card, .education-card').forEach((item, index) => {
+    // Add animation to skill and card items
+    const animatedCards = document.querySelectorAll('.skill-item, .skill-card, .skill-detail-card, .expertise-card, .project-card, .education-card');
+    animatedCards.forEach((item, index) => {
         item.setAttribute('data-aos', 'zoom-in');
         item.setAttribute('data-aos-delay', (index * 50).toString());
         item.classList.add('animate-on-scroll');
@@ -59,14 +60,12 @@ function initAnimations() {
     });
     
     // Add CSS class for animations
+    // Optional: legacy fade-in support (kept lightweight)
     document.addEventListener('scroll', () => {
         const elements = document.querySelectorAll('.fade-in');
-        
         elements.forEach(element => {
             const elementTop = element.getBoundingClientRect().top;
-            const elementVisible = 150;
-            
-            if (elementTop < window.innerHeight - elementVisible) {
+            if (elementTop < window.innerHeight - 150) {
                 element.classList.add('active');
             }
         });

@@ -2059,3 +2059,44 @@ section {
         opacity: 1;
     }
 }
+
+/* ===== Skills & Card Reveal Enhancements ===== */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.animated,
+.in-view {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Unified skill card polish */
+.skill-item,
+.skill-card,
+.skill-detail-card,
+.expertise-card,
+.project-card,
+.education-card {
+    will-change: transform, opacity, box-shadow;
+}
+
+/* Root-style skill-item polish for consistency */
+.skill-item {
+    background: var(--background);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eef1f4;
+}
+
+.skill-item:hover,
+.skill-card:hover,
+.skill-detail-card:hover,
+.expertise-card:hover,
+.project-card:hover,
+.education-card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
