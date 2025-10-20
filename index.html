@@ -342,12 +342,15 @@
                         <p>S.N. Road, Near BSF Camp, Cooch Behar, West Bengal</p>
                     </div>
                 </div>
-                <form class="contact-form" action="https://formsubmit.co/amanrck69@gmail.com" method="POST">
-                    <input type="text" name="name" placeholder="Name" required>
-                    <input type="email" name="email" placeholder="Email" required>
-                    <textarea name="message" placeholder="Message" required></textarea>
-                    <input type="hidden" name="_next" value="https://YOUR_USERNAME.github.io/portfolio-website/thanks.html">
+                <form class="contact-form" id="contactForm" action="https://formsubmit.co/amanrck69@gmail.com" method="POST" onsubmit="return validateForm()">
+                    <input type="text" name="name" id="name" placeholder="Name" required>
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+                    <textarea name="message" id="message" placeholder="Message" required></textarea>
+                    <input type="hidden" name="_next" value="https://amanrck96.github.io/thanks.html">
                     <input type="hidden" name="_subject" value="New Portfolio Contact!">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_autoresponse" value="Thank you for contacting me! I'll get back to you as soon as possible.">
                     <button type="submit" class="cta-button">Send Message</button>
                 </form>
             </div>

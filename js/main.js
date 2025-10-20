@@ -25,15 +25,34 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// Form submission handling
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        // Add your form submission logic here
-        alert('Thank you for your message! I will get back to you soon.');
-        contactForm.reset();
-    });
+// Form validation function
+function validateForm() {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    
+    if (name.trim() === '') {
+        alert('Please enter your name');
+        return false;
+    }
+    
+    if (email.trim() === '') {
+        alert('Please enter your email');
+        return false;
+    }
+    
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address');
+        return false;
+    }
+    
+    if (message.trim() === '') {
+        alert('Please enter your message');
+        return false;
+    }
+    
+    return true;
 }
 
 // Skill progress animation
