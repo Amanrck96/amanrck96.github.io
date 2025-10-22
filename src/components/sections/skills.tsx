@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { skills } from '@/lib/data';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { ChartContainer, ChartTooltipContent } from '@/components/ui/chart';
+import { cn } from '@/lib/utils';
 
 const skillCategories = [skills.technical, skills.business, skills.management];
 
@@ -42,7 +43,7 @@ export function SkillsSection() {
                         <BarChart
                           data={category.items}
                           layout="vertical"
-                          margin={{ top: 5, right: 20, left: 80, bottom: 5 }}
+                          margin={{ top: 5, right: 20, left: 120, bottom: 5 }}
                         >
                           <CartesianGrid strokeDasharray="3 3" horizontal={false} />
                           <XAxis type="number" domain={[0, 100]} hide />
@@ -62,7 +63,13 @@ export function SkillsSection() {
                   </div>
                   <div className="space-y-4 text-sm text-muted-foreground">
                     {category.items.map(item => (
-                        <div key={item.name}>
+                        <div
+                          key={item.name}
+                          className={cn(
+                            item.name === 'Financial Analysis' &&
+                              'bg-green-100/30 border border-green-200/50 p-3 rounded-lg'
+                          )}
+                        >
                             <p className="font-semibold text-foreground">{item.name}</p>
                             <p>{item.description}</p>
                         </div>
