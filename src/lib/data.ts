@@ -110,30 +110,30 @@ export const skills = {
       title: 'Technical Proficiency',
       icon: Code,
       items: [
-        { name: 'Data Mapping & Analytics', description: 'Advanced data structuring, ETL processes, and analytics implementation' },
-        { name: 'Microsoft Excel', description: 'Advanced VBA, Macros, Power Query, DAX, and complex financial modeling' },
-        { name: 'Data Visualization', description: 'Power BI, Tableau, interactive dashboards, and KPI tracking' },
-        { name: 'Programming & Automation', description: 'App Script, VBA, SQL, Python for process automation' },
+        { name: 'Data Mapping & Analytics', proficiency: 90 },
+        { name: 'Microsoft Excel', proficiency: 95 },
+        { name: 'Data Visualization', proficiency: 85 },
+        { name: 'Programming & Automation', proficiency: 80 },
       ]
     },
     business: {
       title: 'Business Analysis Skills',
       icon: Briefcase,
       items: [
-        { name: 'Financial Analysis', description: 'Revenue forecasting, cost analysis, budgeting, and financial modeling' },
-        { name: 'Process Analysis', description: 'Workflow optimization, process mapping, and efficiency improvement' },
-        { name: 'Strategic Planning', description: 'Requirements gathering, stakeholder management, and solution design' },
-        { name: 'Performance Analytics', description: 'KPI development, metric tracking, and performance optimization' },
+        { name: 'Financial Analysis', proficiency: 85 },
+        { name: 'Process Analysis', proficiency: 90 },
+        { name: 'Strategic Planning', proficiency: 80 },
+        { name: 'Performance Analytics', proficiency: 88 },
       ]
     },
     management: {
       title: 'Management Expertise',
       icon: GanttChartSquare,
       items: [
-        { name: 'MIS Development', description: 'End-to-end MIS implementation and optimization' },
-        { name: 'Team Collaboration', description: 'Cross-functional team coordination and stakeholder management' },
-        { name: 'Risk Management', description: 'Risk assessment, mitigation strategies, and compliance' },
-        { name: 'Problem Solving', description: 'Critical thinking, analytical problem resolution, and decision-making' },
+        { name: 'MIS Development', proficiency: 95 },
+        { name: 'Team Collaboration', proficiency: 92 },
+        { name: 'Risk Management', proficiency: 85 },
+        { name: 'Problem Solving', proficiency: 90 },
       ]
     }
 };
