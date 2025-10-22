@@ -6,7 +6,7 @@ import { ExternalLink, FileText } from 'lucide-react';
 
 export function CertificationsSection() {
   return (
-    <section id="certifications" className="w-full bg-card">
+    <section id="certifications" className="w-full bg-card py-20 md:py-32">
       <div className="container mx-auto">
         <h2 className="section-title">Professional Certifications</h2>
         <p className="section-subtitle">

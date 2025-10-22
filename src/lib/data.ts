@@ -36,6 +36,7 @@ export const navLinks = [
   { name: 'Experience', href: '/experience' },
   { name: 'Skills', href: '/skills' },
   { name: 'Projects', href: '/projects' },
+  { name: 'Certifications', href: '/certifications' },
   { name: 'Contact', href: '/contact' },
 ];
 
@@ -158,44 +159,25 @@ export const projects = [
 
 export const certifications = [
   {
+    title: 'Power BI Certified',
+    issuer: 'Simplilearn',
+    period: 'Issued',
+    skills: 'Power BI, Data Visualization, Business Intelligence',
+    link: 'https://drive.google.com/file/d/1F0n3txEf-OL0Dyc06ykxQ93rdub_I9F2/view?usp=sharing'
+  },
+  {
     title: 'Google Analytics Certification',
-    issuer: 'Google Skillshop',
-    period: 'Issued Jan 2024 · Expires Jan 2025',
-    id: '91743555',
-    skills: 'Data Analysis, Analytical Skills, Data Analytics, Financial Analysis',
-    link: 'https://drive.google.com/file/d/1B2t1VA-FZfys7ARRqhmPq9J19fi4Bn-c/view?usp=sharing'
-  },
-  {
-    title: 'Digital Garage',
     issuer: 'Google',
-    period: 'Issued Jul 2020',
-    id: 'cgyxwh2bt',
-    skills: 'Data Analytics',
+    period: 'Issued',
+    skills: 'Data Analysis, Analytical Skills, Data Analytics',
     link: 'https://drive.google.com/file/d/1B2t1VA-FZfys7ARRqhmPq9J19fi4Bn-c/view?usp=sharing'
   },
   {
-    title: 'Excel: Macros and VBA',
-    issuer: 'LinkedIn',
-    period: 'Issued recently',
-    id: 'e61154f5a479...8df',
-    skills: 'Excel Models, Excel Dashboards, Excel Services, Excel Automation',
+    title: 'Advance Excel Macros & VBA',
+    issuer: 'LinkedIn Learning',
+    period: 'Issued',
+    skills: 'Excel Models, Excel Dashboards, Excel Automation, VBA',
     link: 'https://drive.google.com/file/d/1O_XB1IQoJkVNXvYB9tDWyxwnJY56r3ib/view?usp=sharing'
-  },
-  {
-    title: 'Influencing Without Authority',
-    issuer: 'LinkedIn',
-    period: 'Issued recently',
-    id: 'b74db647a9e3...254',
-    skills: 'Management',
-    link: ''
-  },
-  {
-    title: 'Time Management',
-    issuer: 'LinkedIn',
-    period: 'Issued recently',
-    id: 'ec0c0965b4a5...9bf',
-    skills: 'Management, Management Information Systems (MIS)',
-    link: ''
   }
 ];
 
