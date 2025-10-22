@@ -5,6 +5,9 @@ import { Download, Mail, MapPin, Phone } from 'lucide-react';
 import Link from 'next/link';
 
 export function HeroSection() {
+  const SocialIcon1 = profile.social[0].icon;
+  const SocialIcon2 = profile.social[1].icon;
+
   return (
     <section id="home" className="w-full bg-card">
       <div className="container mx-auto grid grid-cols-1 items-center gap-12 py-12 md:grid-cols-2 lg:gap-20 md:py-20">
@@ -60,19 +63,19 @@ export function HeroSection() {
                 </div>
                 <div>
                     {profile.phone.map((p, i) => (
-                        <a key={i} href={`tel:${p.replace(/\s/g, '')}`} className="block hover:text-primary transition-colors">{p}</a>
+                        <a key={i} href={`tel:${p.replace(/\\s/g, '')}`} className="block hover:text-primary transition-colors">{p}</a>
                     ))}
                 </div>
             </div>
             <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 pt-1">
-                    <profile.social[0].icon className="h-5 w-5 text-muted-foreground" />
+                    <SocialIcon1 className="h-5 w-5 text-muted-foreground" />
                 </div>
                 <a href={profile.social[0].url} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">{profile.social[0].url.replace('https://','')}</a>
             </div>
             <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 pt-1">
-                    <profile.social[1].icon className="h-5 w-5 text-muted-foreground" />
+                    <SocialIcon2 className="h-5 w-5 text-muted-foreground" />
                 </div>
                 <a href={profile.social[1].url} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">{profile.social[1].url.replace('https://','')}</a>
             </div>
