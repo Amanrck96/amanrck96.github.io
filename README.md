@@ -1,3 +1,0 @@
-# AMAN SAH
-# NEXA
-# 
