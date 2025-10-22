@@ -1,10 +1,17 @@
 'use client';
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { ChartContainer, ChartTooltipContent } from '@/components/ui/chart';
+import { ChartContainer, ChartTooltipContent, type ChartConfig } from '@/components/ui/chart';
 import { skills } from '@/lib/data';
 
 const skillCategories = [skills.technical, skills.business, skills.management];
+
+const chartConfig = {
+  level: {
+    label: "Proficiency",
+    color: "hsl(var(--chart-1))",
+  },
+} satisfies ChartConfig;
 
 export function SkillsSection() {
   return (
@@ -25,29 +32,31 @@ export function SkillsSection() {
               </CardHeader>
               <CardContent>
                 <div className="h-[300px] w-full">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart
-                      data={category.items}
-                      layout="vertical"
-                      margin={{ top: 5, right: 10, left: 10, bottom: 5 }}
-                    >
-                      <CartesianGrid strokeDasharray="3 3" horizontal={false} stroke="hsl(var(--border))" />
-                      <XAxis type="number" hide />
-                      <YAxis
-                        dataKey="name"
-                        type="category"
-                        tickLine={false}
-                        axisLine={false}
-                        tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 14 }}
-                        width={180}
-                      />
-                      <Tooltip
-                        cursor={{ fill: 'hsl(var(--card))' }}
-                        content={<ChartTooltipContent indicator="dot" />}
-                      />
-                      <Bar dataKey="level" radius={[0, 4, 4, 0]} fill="var(--color-1)" />
-                    </BarChart>
-                  </ResponsiveContainer>
+                  <ChartContainer config={chartConfig}>
+                    <ResponsiveContainer width="100%" height="100%">
+                      <BarChart
+                        data={category.items}
+                        layout="vertical"
+                        margin={{ top: 5, right: 10, left: 10, bottom: 5 }}
+                      >
+                        <CartesianGrid strokeDasharray="3 3" horizontal={false} stroke="hsl(var(--border))" />
+                        <XAxis type="number" hide />
+                        <YAxis
+                          dataKey="name"
+                          type="category"
+                          tickLine={false}
+                          axisLine={false}
+                          tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 14 }}
+                          width={180}
+                        />
+                        <Tooltip
+                          cursor={{ fill: 'hsl(var(--card))' }}
+                          content={<ChartTooltipContent indicator="dot" />}
+                        />
+                        <Bar dataKey="level" radius={[0, 4, 4, 0]} fill="var(--color-level)" />
+                      </BarChart>
+                    </ResponsiveContainer>
+                  </ChartContainer>
                 </div>
               </CardContent>
             </Card>
