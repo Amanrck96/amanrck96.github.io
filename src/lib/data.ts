@@ -75,6 +75,8 @@ export const experiences = [
       'Established secure data retention policies in compliance with company standards.',
       'Supported HR in manpower planning and attrition analysis.',
       'Developed visual analytics for workforce diversity and skill mapping.',
+      'Analyzed employee engagement survey data to identify trends and recommend improvements.',
+      'Created and monitored dashboards to track recruitment metrics and time-to-hire.',
     ],
   },
   {
