@@ -110,30 +110,30 @@ export const skills = {
       title: 'Technical Proficiency',
       icon: Code,
       items: [
-        { name: 'Data Mapping & Analytics', proficiency: 90, description: 'Advanced data structuring, ETL processes, and analytics implementation' },
-        { name: 'Microsoft Excel', proficiency: 95, description: 'Advanced VBA, Macros, Power Query, DAX, and complex financial modeling' },
-        { name: 'Data Visualization', proficiency: 85, description: 'Power BI, Tableau, interactive dashboards, and KPI tracking' },
-        { name: 'Programming & Automation', proficiency: 80, description: 'App Script, VBA, SQL, Python for process automation' },
+        { name: 'Data Mapping & Analytics', proficiency: 90, description: 'Advanced data structuring, ETL processes, and analytics implementation. Expertise in transforming raw data into actionable insights.' },
+        { name: 'Microsoft Excel', proficiency: 95, description: 'Advanced VBA, Macros, Power Query, and DAX. Complex financial modeling and data manipulation.' },
+        { name: 'Data Visualization', proficiency: 85, description: 'Power BI and Tableau proficiency. Interactive dashboards and KPI tracking for data-driven decision-making.' },
+        { name: 'Programming & Automation', proficiency: 80, description: 'App Script, VBA, SQL, and Python for process automation. Streamlining workflows through scripting and automation.' },
       ]
     },
     business: {
       title: 'Business Analysis Skills',
       icon: Briefcase,
       items: [
-        { name: 'Financial Analysis', proficiency: 85, description: 'Revenue forecasting, cost analysis, budgeting, and financial modeling' },
-        { name: 'Process Analysis', proficiency: 90, description: 'Workflow optimization, process mapping, and efficiency improvement' },
-        { name: 'Strategic Planning', proficiency: 80, description: 'Requirements gathering, stakeholder management, and solution design' },
-        { name: 'Performance Analytics', proficiency: 88, description: 'KPI development, metric tracking, and performance optimization' },
+        { name: 'Financial Analysis', proficiency: 85, description: 'Revenue forecasting, cost analysis, and budgeting. Financial modeling for strategic planning.' },
+        { name: 'Process Analysis', proficiency: 90, description: 'Workflow optimization and process mapping. Efficiency improvement through systematic evaluation.' },
+        { name: 'Strategic Planning', proficiency: 80, description: 'Requirements gathering and stakeholder management. Solution design aligned with business objectives.' },
+        { name: 'Performance Analytics', proficiency: 88, description: 'KPI development and metric tracking. Performance optimization through data analysis.' },
       ]
     },
     management: {
       title: 'Management Expertise',
       icon: GanttChartSquare,
       items: [
-        { name: 'MIS Development', proficiency: 95, description: 'End-to-end MIS implementation and optimization' },
-        { name: 'Team Collaboration', proficiency: 92, description: 'Cross-functional team coordination and stakeholder management' },
-        { name: 'Risk Management', proficiency: 85, description: 'Risk assessment, mitigation strategies, and compliance' },
-        { name: 'Problem Solving', proficiency: 90, description: 'Critical thinking, analytical problem resolution, and decision-making' },
+        { name: 'MIS Development', proficiency: 95, description: 'End-to-end MIS implementation and optimization. Designing systems for effective information management.' },
+        { name: 'Team Collaboration', proficiency: 92, description: 'Cross-functional team coordination. Stakeholder engagement and alignment.' },
+        { name: 'Risk Management', proficiency: 85, description: 'Risk assessment and mitigation strategies. Ensuring compliance with industry standards.' },
+        { name: 'Problem Solving', proficiency: 90, description: 'Critical thinking and analytical problem resolution. Data-driven decision-making for business challenges.' },
       ]
     }
 };
