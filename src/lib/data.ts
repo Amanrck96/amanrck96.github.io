@@ -111,7 +111,7 @@ export const skills = {
       icon: Code,
       items: [
         { name: 'Data Mapping & Analytics', proficiency: 90, description: 'Advanced data structuring, ETL processes, and analytics implementation. Expertise in transforming raw data into actionable insights.' },
-        { name: 'Microsoft Excel', proficiency: 95, description: 'Advanced VBA, Macros, Power Query, and DAX. Complex financial modeling and data manipulation.' },
+        { name: 'Microsoft Excel', proficiency: 95, description: 'Advanced VBA, Macros, Power Query, DAX, and complex financial modeling. Complex financial modeling and data manipulation.' },
         { name: 'Data Visualization', proficiency: 85, description: 'Power BI and Tableau proficiency. Interactive dashboards and KPI tracking for data-driven decision-making.' },
         { name: 'Programming & Automation', proficiency: 80, description: 'App Script, VBA, SQL, and Python for process automation. Streamlining workflows through scripting and automation.' },
       ]
@@ -120,10 +120,10 @@ export const skills = {
       title: 'Business Analysis Skills',
       icon: Briefcase,
       items: [
-        { name: 'Financial Analysis', proficiency: 85, description: 'Revenue forecasting, cost analysis, and budgeting. Financial modeling for strategic planning.' },
-        { name: 'Process Analysis', proficiency: 90, description: 'Workflow optimization and process mapping. Efficiency improvement through systematic evaluation.' },
-        { name: 'Strategic Planning', proficiency: 80, description: 'Requirements gathering and stakeholder management. Solution design aligned with business objectives.' },
-        { name: 'Performance Analytics', proficiency: 88, description: 'KPI development and metric tracking. Performance optimization through data analysis.' },
+        { name: 'Financial Analysis', proficiency: 85, description: 'Revenue forecasting, cost analysis, budgeting, and financial modeling. Financial modeling for strategic planning.' },
+        { name: 'Process Analysis', proficiency: 90, description: 'Workflow optimization, process mapping, and efficiency improvement. Efficiency improvement through systematic evaluation.' },
+        { name: 'Strategic Planning', proficiency: 80, description: 'Requirements gathering, stakeholder management, and solution design. Solution design aligned with business objectives.' },
+        { name: 'Performance Analytics', proficiency: 88, description: 'KPI development, metric tracking, and performance optimization. Performance optimization through data analysis.' },
       ]
     },
     management: {
@@ -131,9 +131,9 @@ export const skills = {
       icon: GanttChartSquare,
       items: [
         { name: 'MIS Development', proficiency: 95, description: 'End-to-end MIS implementation and optimization. Designing systems for effective information management.' },
-        { name: 'Team Collaboration', proficiency: 92, description: 'Cross-functional team coordination. Stakeholder engagement and alignment.' },
-        { name: 'Risk Management', proficiency: 85, description: 'Risk assessment and mitigation strategies. Ensuring compliance with industry standards.' },
-        { name: 'Problem Solving', proficiency: 90, description: 'Critical thinking and analytical problem resolution. Data-driven decision-making for business challenges.' },
+        { name: 'Team Collaboration', proficiency: 92, description: 'Cross-functional team coordination and stakeholder engagement. Cross-functional team coordination and stakeholder alignment.' },
+        { name: 'Risk Management', proficiency: 85, description: 'Risk assessment and mitigation strategies. Risk assessment, mitigation strategies, and ensuring compliance with industry standards.' },
+        { name: 'Problem Solving', proficiency: 90, description: 'Critical thinking and analytical problem resolution. Critical thinking, analytical problem resolution, and data-driven decision-making for business challenges.' },
       ]
     }
 };
@@ -182,6 +182,30 @@ export const certifications = [
     period: 'Issued',
     skills: 'Excel Models, Excel Dashboards, Excel Automation, VBA',
     link: 'https://drive.google.com/file/d/1O_XB1IQoJkVNXvYB9tDWyxwnJY56r3ib/view?usp=sharing',
+    icon: FileText
+  },
+  {
+    title: 'Digital Garage',
+    issuer: 'Google',
+    period: 'Issued Jul 2020',
+    skills: 'Data Analytics',
+    link: '',
+    icon: FileText
+  },
+  {
+    title: 'Influencing Without Authority',
+    issuer: 'LinkedIn',
+    period: 'Issued',
+    skills: 'Management',
+    link: '',
+    icon: FileText
+  },
+  {
+    title: 'Time Management',
+    issuer: 'LinkedIn',
+    period: 'Issued',
+    skills: 'Management, Management Information Systems (MIS)',
+    link: '',
     icon: FileText
   }
 ];
