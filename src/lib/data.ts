@@ -1,3 +1,4 @@
+
 import type { ImagePlaceholder } from '@/lib/placeholder-images';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Briefcase, Code, FileText, GanttChartSquare, Github, GraduationCap, Linkedin, Mail, MapPin, Phone, Star } from "lucide-react";
@@ -233,3 +234,5 @@ export const contactDetails = {
     address: MapPin,
   },
 };
+
+    
