@@ -1,6 +1,6 @@
 import type { ImagePlaceholder } from '@/lib/placeholder-images';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { BookUser, Briefcase, Code, FileText, GanttChartSquare, Github, Linkedin, Mail, MapPin, Phone, Star } from "lucide-react";
+import { Briefcase, Code, FileText, GanttChartSquare, Github, GraduationCap, Linkedin, Mail, MapPin, Phone, Star } from "lucide-react";
 
 const findImage = (id: string): ImagePlaceholder => {
   const image = PlaceHolderImages.find((img) => img.id === id);
@@ -110,30 +110,30 @@ export const skills = {
       title: 'Technical Proficiency',
       icon: Code,
       items: [
-        { name: 'Data Mapping & Analytics', proficiency: 90 },
-        { name: 'Microsoft Excel', proficiency: 95 },
-        { name: 'Data Visualization', proficiency: 85 },
-        { name: 'Programming & Automation', proficiency: 80 },
+        { name: 'Data Mapping & Analytics', proficiency: 90, description: 'Advanced data structuring, ETL processes, and analytics implementation' },
+        { name: 'Microsoft Excel', proficiency: 95, description: 'Advanced VBA, Macros, Power Query, DAX, and complex financial modeling' },
+        { name: 'Data Visualization', proficiency: 85, description: 'Power BI, Tableau, interactive dashboards, and KPI tracking' },
+        { name: 'Programming & Automation', proficiency: 80, description: 'App Script, VBA, SQL, Python for process automation' },
       ]
     },
     business: {
       title: 'Business Analysis Skills',
       icon: Briefcase,
       items: [
-        { name: 'Financial Analysis', proficiency: 85 },
-        { name: 'Process Analysis', proficiency: 90 },
-        { name: 'Strategic Planning', proficiency: 80 },
-        { name: 'Performance Analytics', proficiency: 88 },
+        { name: 'Financial Analysis', proficiency: 85, description: 'Revenue forecasting, cost analysis, budgeting, and financial modeling' },
+        { name: 'Process Analysis', proficiency: 90, description: 'Workflow optimization, process mapping, and efficiency improvement' },
+        { name: 'Strategic Planning', proficiency: 80, description: 'Requirements gathering, stakeholder management, and solution design' },
+        { name: 'Performance Analytics', proficiency: 88, description: 'KPI development, metric tracking, and performance optimization' },
       ]
     },
     management: {
       title: 'Management Expertise',
       icon: GanttChartSquare,
       items: [
-        { name: 'MIS Development', proficiency: 95 },
-        { name: 'Team Collaboration', proficiency: 92 },
-        { name: 'Risk Management', proficiency: 85 },
-        { name: 'Problem Solving', proficiency: 90 },
+        { name: 'MIS Development', proficiency: 95, description: 'End-to-end MIS implementation and optimization' },
+        { name: 'Team Collaboration', proficiency: 92, description: 'Cross-functional team coordination and stakeholder management' },
+        { name: 'Risk Management', proficiency: 85, description: 'Risk assessment, mitigation strategies, and compliance' },
+        { name: 'Problem Solving', proficiency: 90, description: 'Critical thinking, analytical problem resolution, and decision-making' },
       ]
     }
 };

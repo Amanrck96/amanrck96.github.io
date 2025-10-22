@@ -35,28 +35,40 @@ export function SkillsSection() {
                 </div>
               </CardHeader>
               <CardContent>
-                <ChartContainer config={chartConfig} className="min-h-[200px] w-full">
-                  <ResponsiveContainer width="100%" height={250}>
-                    <BarChart
-                      data={category.items}
-                      layout="vertical"
-                      margin={{ top: 5, right: 20, left: 80, bottom: 5 }}
-                    >
-                      <CartesianGrid strokeDasharray="3 3" horizontal={false} />
-                      <XAxis type="number" domain={[0, 100]} hide />
-                      <YAxis dataKey="name" type="category" width={120} tickLine={false} axisLine={false} />
-                      <Tooltip
-                        cursor={{ fill: 'hsla(var(--accent) / 0.2)' }}
-                        content={<ChartTooltipContent 
-                          formatter={(value) => `${value}%`} 
-                          indicator='line'
-                          hideLabel
-                        />}
-                      />
-                      <Bar dataKey="proficiency" fill="var(--color-proficiency)" radius={4} />
-                    </BarChart>
-                  </ResponsiveContainer>
-                </ChartContainer>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                  <div>
+                    <ChartContainer config={chartConfig} className="min-h-[200px] w-full">
+                      <ResponsiveContainer width="100%" height={250}>
+                        <BarChart
+                          data={category.items}
+                          layout="vertical"
+                          margin={{ top: 5, right: 20, left: 80, bottom: 5 }}
+                        >
+                          <CartesianGrid strokeDasharray="3 3" horizontal={false} />
+                          <XAxis type="number" domain={[0, 100]} hide />
+                          <YAxis dataKey="name" type="category" width={120} tickLine={false} axisLine={false} />
+                          <Tooltip
+                            cursor={{ fill: 'hsla(var(--accent) / 0.2)' }}
+                            content={<ChartTooltipContent 
+                              formatter={(value) => `${value}%`} 
+                              indicator='line'
+                              hideLabel
+                            />}
+                          />
+                          <Bar dataKey="proficiency" fill="var(--color-proficiency)" radius={4} />
+                        </BarChart>
+                      </ResponsiveContainer>
+                    </ChartContainer>
+                  </div>
+                  <div className="space-y-4 text-sm text-muted-foreground">
+                    {category.items.map(item => (
+                        <div key={item.name}>
+                            <p className="font-semibold text-foreground">{item.name}</p>
+                            <p>{item.description}</p>
+                        </div>
+                    ))}
+                  </div>
+                </div>
               </CardContent>
             </Card>
           ))}
