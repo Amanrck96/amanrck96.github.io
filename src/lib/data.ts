@@ -108,30 +108,30 @@ export const skills = {
       title: 'Technical Proficiency',
       icon: Code,
       items: [
-        { name: 'Data Mapping & Analytics', level: 90 },
-        { name: 'Microsoft Excel (VBA, Power Query, DAX)', level: 95 },
-        { name: 'Data Visualization (Power BI, Tableau)', level: 85 },
-        { name: 'Programming & Automation (App Script, SQL)', level: 80 },
+        { name: 'Data Mapping & Analytics', description: 'Advanced data structuring, ETL processes, and analytics implementation' },
+        { name: 'Microsoft Excel', description: 'Advanced VBA, Macros, Power Query, DAX, and complex financial modeling' },
+        { name: 'Data Visualization', description: 'Power BI, Tableau, interactive dashboards, and KPI tracking' },
+        { name: 'Programming & Automation', description: 'App Script, VBA, SQL, Python for process automation' },
       ]
     },
     business: {
       title: 'Business Analysis Skills',
       icon: Briefcase,
       items: [
-        { name: 'Financial Analysis', level: 85 },
-        { name: 'Process Analysis & Optimization', level: 90 },
-        { name: 'Strategic Planning', level: 80 },
-        { name: 'Performance Analytics (KPIs)', level: 88 },
+        { name: 'Financial Analysis', description: 'Revenue forecasting, cost analysis, budgeting, and financial modeling' },
+        { name: 'Process Analysis', description: 'Workflow optimization, process mapping, and efficiency improvement' },
+        { name: 'Strategic Planning', description: 'Requirements gathering, stakeholder management, and solution design' },
+        { name: 'Performance Analytics', description: 'KPI development, metric tracking, and performance optimization' },
       ]
     },
     management: {
       title: 'Management Expertise',
       icon: GanttChartSquare,
       items: [
-        { name: 'MIS Development', level: 95 },
-        { name: 'Team Collaboration', level: 90 },
-        { name: 'Risk Management', level: 75 },
-        { name: 'Analytical Problem Solving', level: 92 },
+        { name: 'MIS Development', description: 'End-to-end MIS implementation and optimization' },
+        { name: 'Team Collaboration', description: 'Cross-functional team coordination and stakeholder management' },
+        { name: 'Risk Management', description: 'Risk assessment, mitigation strategies, and compliance' },
+        { name: 'Problem Solving', description: 'Critical thinking, analytical problem resolution, and decision-making' },
       ]
     }
 };
@@ -163,21 +163,24 @@ export const certifications = [
     issuer: 'Simplilearn',
     period: 'Issued',
     skills: 'Power BI, Data Visualization, Business Intelligence',
-    link: 'https://drive.google.com/file/d/1F0n3txEf-OL0Dyc06ykxQ93rdub_I9F2/view?usp=sharing'
+    link: 'https://drive.google.com/file/d/1F0n3txEf-OL0Dyc06ykxQ93rdub_I9F2/view?usp=sharing',
+    icon: FileText
   },
   {
     title: 'Google Analytics Certification',
     issuer: 'Google',
     period: 'Issued',
     skills: 'Data Analysis, Analytical Skills, Data Analytics',
-    link: 'https://drive.google.com/file/d/1B2t1VA-FZfys7ARRqhmPq9J19fi4Bn-c/view?usp=sharing'
+    link: 'https://drive.google.com/file/d/1B2t1VA-FZfys7ARRqhmPq9J19fi4Bn-c/view?usp=sharing',
+    icon: FileText
   },
   {
     title: 'Advance Excel Macros & VBA',
     issuer: 'LinkedIn Learning',
     period: 'Issued',
     skills: 'Excel Models, Excel Dashboards, Excel Automation, VBA',
-    link: 'https://drive.google.com/file/d/1O_XB1IQoJkVNXvYB9tDWyxwnJY56r3ib/view?usp=sharing'
+    link: 'https://drive.google.com/file/d/1O_XB1IQoJkVNXvYB9tDWyxwnJY56r3ib/view?usp=sharing',
+    icon: FileText
   }
 ];
 

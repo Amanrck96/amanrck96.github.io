@@ -1,17 +1,9 @@
 'use client';
-import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { ChartContainer, ChartTooltipContent, type ChartConfig } from '@/components/ui/chart';
 import { skills } from '@/lib/data';
+import { CheckCircle2 } from 'lucide-react';
 
 const skillCategories = [skills.technical, skills.business, skills.management];
-
-const chartConfig = {
-  level: {
-    label: "Proficiency",
-    color: "hsl(var(--chart-1))",
-  },
-} satisfies ChartConfig;
 
 export function SkillsSection() {
   return (
@@ -19,9 +11,9 @@ export function SkillsSection() {
       <div className="container mx-auto">
         <h2 className="section-title">Skills & Expertise</h2>
         <p className="section-subtitle">
-          Core competencies visually displayed through interactive proficiency charts.
+          Core competencies in technical, business, and management domains.
         </p>
-        <div className="mt-12 grid gap-8 md:grid-cols-1 lg:grid-cols-3">
+        <div className="mt-12 grid gap-8 md:grid-cols-1 lg:grid-cols-2">
           {skillCategories.map((category, index) => (
             <Card key={category.title} className="fade-in-up" style={{ animationDelay: `${index * 0.15}s` }}>
               <CardHeader>
@@ -31,36 +23,22 @@ export function SkillsSection() {
                 </div>
               </CardHeader>
               <CardContent>
-                <div className="h-[300px] w-full">
-                  <ChartContainer config={chartConfig}>
-                    <ResponsiveContainer width="100%" height="100%">
-                      <BarChart
-                        data={category.items}
-                        layout="vertical"
-                        margin={{ top: 5, right: 10, left: 10, bottom: 5 }}
-                      >
-                        <CartesianGrid strokeDasharray="3 3" horizontal={false} stroke="hsl(var(--border))" />
-                        <XAxis type="number" hide />
-                        <YAxis
-                          dataKey="name"
-                          type="category"
-                          tickLine={false}
-                          axisLine={false}
-                          tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 14 }}
-                          width={180}
-                        />
-                        <Tooltip
-                          cursor={{ fill: 'hsl(var(--card))' }}
-                          content={<ChartTooltipContent indicator="dot" />}
-                        />
-                        <Bar dataKey="level" radius={[0, 4, 4, 0]} fill="var(--color-level)" />
-                      </BarChart>
-                    </ResponsiveContainer>
-                  </ChartContainer>
-                </div>
+                <ul className="space-y-4">
+                  {category.items.map((skill) => (
+                    <li key={skill.name} className="flex items-start gap-4">
+                      <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
+                      <div>
+                        <h4 className="font-semibold">{skill.name}</h4>
+                        <p className="text-muted-foreground text-sm">{skill.description}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
               </CardContent>
             </Card>
           ))}
+          {/* Empty card for alignment on a 3-category layout with 2 columns */}
+          {skillCategories.length % 2 !== 0 && <div/>}
         </div>
       </div>
     </section>
