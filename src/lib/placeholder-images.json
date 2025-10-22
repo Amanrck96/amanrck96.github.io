@@ -3,12 +3,12 @@
     {
       "id": "project-erabooking",
       "description": "Screenshot of the EraBooking application",
-      "imageUrl": "https://picsum.photos/seed/erabooking/1200/800",
+      "imageUrl": "https://images.unsplash.com/photo-1734070175532-651422f12471?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxib29raW5nJTIwYXBwfGVufDB8fHx8MTc2MTE1NTcyMnww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "booking app"
     },
     {
       "id": "project-tanumaya",
-      "description": "Screenshot of Tanumaya Dhikary's portfolio",
+      "description": "Screenshot of Tanumaya Adhikary's portfolio",
       "imageUrl": "https://images.unsplash.com/photo-1522199755839-a2bacb67c546?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxwb3J0Zm9saW8lMjB3ZWJzaXRlfGVufDB8fHx8MTc2MTE0ODM5MHww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "portfolio website"
     },

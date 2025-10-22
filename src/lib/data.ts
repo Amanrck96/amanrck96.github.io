@@ -146,7 +146,7 @@ export const projects = [
     image: findImage('project-erabooking'),
   },
   {
-    title: 'Tanumaya Dhikary Portfolio',
+    title: 'Tanumaya Adhikary Portfolio',
     description: 'Personal portfolio showcasing projects and technical write-ups.',
     link: 'https://tanumayadhikary.netlify.app/',
     image: findImage('project-tanumaya'),
