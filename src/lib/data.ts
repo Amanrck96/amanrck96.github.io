@@ -249,7 +249,7 @@ export const homepageShowcase = {
   showProjects: false,
   showCertifications: false,
   showEducation: false,
-  showContactCard: true,
+  showContactCard: false,
 };
 
     
