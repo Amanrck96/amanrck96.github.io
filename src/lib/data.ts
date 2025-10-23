@@ -235,4 +235,21 @@ export const contactDetails = {
   },
 };
 
+export const contactLinks = {
+  whatsapp: '+918250522929',
+  linkedin: 'https://linkedin.com/in/amanrck69/',
+  gmail: 'mailto:Amanrck69@gmail.com',
+};
+
+export const homepageShowcase = {
+  showHero: true,
+  showAchievements: true,
+  showExperience: false,
+  showSkills: true,
+  showProjects: true,
+  showCertifications: false,
+  showEducation: true,
+  showContactCard: true,
+};
+
     
