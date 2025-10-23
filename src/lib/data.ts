@@ -245,10 +245,10 @@ export const homepageShowcase = {
   showHero: true,
   showAchievements: true,
   showExperience: false,
-  showSkills: true,
-  showProjects: true,
+  showSkills: false,
+  showProjects: false,
   showCertifications: false,
-  showEducation: true,
+  showEducation: false,
   showContactCard: true,
 };
 
