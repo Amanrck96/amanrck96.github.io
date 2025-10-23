@@ -18,16 +18,21 @@ import { useToast } from '@/hooks/use-toast';
 import { Send } from 'lucide-react';
 
 const formSchema = z.object({
-  name: z.string().min(2, {
-    message: 'Name must be at least 2 characters.',
-  }),
-  email: z.string().email({
-    message: 'Please enter a valid email address.',
-  }),
-  mobile: z.string().optional(),
-  message: z.string().min(10, {
-    message: 'Message must be at least 10 characters.',
-  }),
+  name: z.string()
+    .min(2, 'Name must be at least 2 characters')
+    .max(100, 'Name must be less than 100 characters')
+    .regex(/^[a-zA-Z\s\-'\.]+$/, 'Name contains invalid characters'),
+  email: z.string()
+    .email('Please enter a valid email address')
+    .max(254, 'Email must be less than 254 characters')
+    .toLowerCase(),
+  mobile: z.string()
+    .optional()
+    .refine((val) => !val || /^[\+]?[0-9\s\-\(\)]{10,15}$/.test(val), 'Invalid mobile number format'),
+  message: z.string()
+    .min(10, 'Message must be at least 10 characters')
+    .max(2000, 'Message must be less than 2000 characters')
+    .refine((val) => !/<script|javascript:|on\w+=/i.test(val), 'Message contains potentially harmful content'),
 });
 
 export function ContactForm() {
@@ -42,18 +47,88 @@ export function ContactForm() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    toast({
-      title: 'Message Sent!',
-      description: 'Thank you for reaching out. I will get back to you shortly.',
-    });
-    form.reset();
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    // Use form reference instead of querySelector to ensure the button is found
+    const submitButton = document.getElementById('contact-submit-button') as HTMLButtonElement;
+    const originalText = submitButton?.textContent || 'Send Message';
+    
+    try {
+      // Show loading state
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+      }
+
+      // Use Formspree for static site deployment
+      const fsRes = await fetch('https://formspree.io/f/xdkogqpw', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          name: values.name,
+          email: values.email,
+          mobile: values.mobile || '',
+          message: values.message,
+          _replyto: values.email,
+          _subject: `Portfolio Contact: ${values.name}`,
+        }),
+      });
+
+      const fsData = await fsRes.json().catch(() => null);
+
+      if (fsRes.ok) {
+        toast({
+          title: 'Message Sent Successfully!',
+          description: 'Thank you for reaching out. I will get back to you within 24 hours.',
+          duration: 5000,
+        });
+        form.reset();
+      } else {
+        const errorMessage = (fsData && (fsData.error || fsData.message || (fsData.errors && fsData.errors[0]?.message))) || 'Failed to send message';
+        throw new Error(errorMessage);
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+      
+      let errorMessage = 'Failed to send message. Please try again or contact me directly.';
+      
+      if (error instanceof Error) {
+        if (error.message.includes('NetworkError') || error.message.includes('fetch')) {
+          errorMessage = 'Network error. Please check your connection and try again.';
+        } else if (error.message.includes('timeout')) {
+          errorMessage = 'Request timed out. Please try again.';
+        }
+      }
+      
+      toast({
+        title: 'Error',
+        description: errorMessage,
+        variant: 'destructive',
+        duration: 7000,
+      });
+    } finally {
+      // Reset button state
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = originalText;
+      }
+    }
   }
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+      <form 
+        onSubmit={form.handleSubmit(onSubmit)} 
+        action="https://formspree.io/f/xdkogqpw"
+        method="POST"
+        className="space-y-6"
+      >
+        {/* Hidden fields for HTML fallback submissions and security */}
+        <input type="hidden" name="_subject" value={`Portfolio Contact: ${form.getValues('name') || 'New Contact'}`} />
+        <input type="hidden" name="_honeypot" value="" style={{ display: 'none' }} />
+        <input type="hidden" name="_captcha" value="false" />
         <FormField
           control={form.control}
           name="name"
@@ -61,7 +136,7 @@ export function ContactForm() {
             <FormItem>
               <FormLabel>Name</FormLabel>
               <FormControl>
-                <Input placeholder="Your Name" {...field} />
+                <Input placeholder="Your Name" {...field} name="name" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -74,7 +149,7 @@ export function ContactForm() {
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input placeholder="your.email@example.com" {...field} />
+                <Input placeholder="your.email@example.com" {...field} name="email" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -87,7 +162,7 @@ export function ContactForm() {
             <FormItem>
               <FormLabel>Mobile Number (Optional)</FormLabel>
               <FormControl>
-                <Input placeholder="+91 12345 67890" {...field} />
+                <Input placeholder="+91 12345 67890" {...field} name="mobile" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -100,13 +175,22 @@ export function ContactForm() {
             <FormItem>
               <FormLabel>Message</FormLabel>
               <FormControl>
-                <Textarea placeholder="How can I help you today?" {...field} />
+                <Textarea 
+                  placeholder="How can I help you today?" 
+                  {...field} 
+                  name="message"
+                  rows={6}
+                  className="resize-none"
+                />
               </FormControl>
-              <FormMessage />
+              <div className="flex justify-between text-sm text-muted-foreground">
+                <FormMessage />
+                <span>{field.value?.length || 0}/2000</span>
+              </div>
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-full">
+        <Button type="submit" id="contact-submit-button" className="w-full">
           Send Message <Send className="ml-2 h-4 w-4" />
         </Button>
       </form>
