@@ -19,7 +19,18 @@ export default function ContactPage() {
           <h2 className="text-2xl font-semibold mb-4">Contact Information</h2>
           <div className="space-y-4">
             <p><strong>Email:</strong> <a href={`mailto:${contactDetails.email}`} className="text-accent hover:underline">{contactDetails.email}</a></p>
-            <p><strong>Phone:</strong> <a href={`tel:${contactDetails.phone}`} className="hover:underline">{contactDetails.phone}</a></p>
+            <p>
+              <strong>Phone:</strong>{' '}
+              {Array.isArray(contactDetails.phone) ? (
+                contactDetails.phone.map((p, idx) => (
+                  <a key={p} href={`tel:${p}`} className="hover:underline">
+                    {p}{idx < contactDetails.phone.length - 1 ? ' / ' : ''}
+                  </a>
+                ))
+              ) : (
+                <a href={`tel:${contactDetails.phone}`} className="hover:underline">{contactDetails.phone}</a>
+              )}
+            </p>
           </div>
         </div>
         <div>
