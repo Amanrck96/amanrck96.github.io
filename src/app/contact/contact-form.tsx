@@ -123,7 +123,7 @@ export function ContactForm() {
         onSubmit={form.handleSubmit(onSubmit)} 
         action="https://formspree.io/f/xdkogqpw"
         method="POST"
-        className="space-y-6"
+        className="space-y-8"
       >
         {/* Hidden fields for HTML fallback submissions and security */}
         <input type="hidden" name="_subject" value={`Portfolio Contact: ${form.getValues('name') || 'New Contact'}`} />
@@ -133,10 +133,15 @@ export function ContactForm() {
           control={form.control}
           name="name"
           render={({ field }) => (
-            <FormItem>
-              <FormLabel>Name</FormLabel>
+            <FormItem className="space-y-3">
+              <FormLabel className="text-base">Name</FormLabel>
               <FormControl>
-                <Input placeholder="Your Name" {...field} name="name" />
+                <Input 
+                  placeholder="Your Name" 
+                  {...field} 
+                  name="name" 
+                  className="h-12 px-4 text-base" 
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -146,10 +151,15 @@ export function ContactForm() {
           control={form.control}
           name="email"
           render={({ field }) => (
-            <FormItem>
-              <FormLabel>Email</FormLabel>
+            <FormItem className="space-y-3">
+              <FormLabel className="text-base">Email</FormLabel>
               <FormControl>
-                <Input placeholder="your.email@example.com" {...field} name="email" />
+                <Input 
+                  placeholder="your.email@example.com" 
+                  {...field} 
+                  name="email" 
+                  className="h-12 px-4 text-base" 
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -159,10 +169,15 @@ export function ContactForm() {
           control={form.control}
           name="mobile"
           render={({ field }) => (
-            <FormItem>
-              <FormLabel>Mobile Number (Optional)</FormLabel>
+            <FormItem className="space-y-3">
+              <FormLabel className="text-base">Mobile Number (Optional)</FormLabel>
               <FormControl>
-                <Input placeholder="+91 12345 67890" {...field} name="mobile" />
+                <Input 
+                  placeholder="+91 12345 67890" 
+                  {...field} 
+                  name="mobile" 
+                  className="h-12 px-4 text-base" 
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -172,15 +187,15 @@ export function ContactForm() {
           control={form.control}
           name="message"
           render={({ field }) => (
-            <FormItem>
-              <FormLabel>Message</FormLabel>
+            <FormItem className="space-y-3">
+              <FormLabel className="text-base">Message</FormLabel>
               <FormControl>
                 <Textarea 
                   placeholder="How can I help you today?" 
                   {...field} 
                   name="message"
                   rows={6}
-                  className="resize-none"
+                  className="resize-none px-4 py-3 text-base"
                 />
               </FormControl>
               <div className="flex justify-between text-sm text-muted-foreground">
@@ -190,8 +205,12 @@ export function ContactForm() {
             </FormItem>
           )}
         />
-        <Button type="submit" id="contact-submit-button" className="w-full">
-          Send Message <Send className="ml-2 h-4 w-4" />
+        <Button 
+          type="submit" 
+          id="contact-submit-button" 
+          className="w-full h-12 text-base mt-4 transition-all"
+        >
+          Send Message <Send className="ml-2 h-5 w-5" />
         </Button>
       </form>
     </Form>
