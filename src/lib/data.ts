@@ -27,7 +27,7 @@ export const profile = {
     { name: 'LinkedIn', url: 'https://linkedin.com/in/amanrck69/', icon: Linkedin },
     { name: 'GitHub', url: 'https://amanrck96.github.io', icon: Github },
   ],
-  resumeUrl: 'https://drive.google.com/file/d/1Jj_zEh0aF7NzIBmk7TVwsXO2FGhPbG2r/view?usp=sharing',
+  resumeUrl: 'https://drive.google.com/file/d/1YkPhc3eJm2Psoso9TdOgxz3YeIk-LGV4/view?usp=sharing',
   summary:
     'Results-driven Data Analyst & MIS Executive with 6+ years of experience in data analytics, MIS reporting, and business intelligence. Expert in Advance Excel, Power BI, VBA, SQL, and Tableau, with a proven ability to deliver automated reporting solutions, improve operational efficiency, and enhance data-driven decision-making. Adept at predictive analytics, HR analytics, and process optimization.',
 };
@@ -212,16 +212,16 @@ export const certifications = [
 ];
 
 export const education = [
-    {
-        degree: 'B.C.A.',
-        institution: 'Jaipur National University, Cooch Behar',
-        year: '2019'
-    },
-    {
-        degree: 'B.Com (Accounting & Finance)',
-        institution: 'Cooch Behar Shree Hindi Vidyalaya',
-        year: '2011'
-    }
+  {
+    degree: '12th - Accounting & Finance',
+    institution: 'Cooch Behar Shree Hindi Vidyalaya',
+    year: '2011',
+  },
+  {
+    degree: "Bachelor's Degree - Bachelor of Computer Applications",
+    institution: 'Jaipur National University, Jaipur',
+    year: '2019',
+  },
 ]
 
 export const contactDetails = {
@@ -248,7 +248,7 @@ export const homepageShowcase = {
   showSkills: false,
   showProjects: false,
   showCertifications: false,
-  showEducation: false,
+  showEducation: true,
   showContactCard: false,
 };
 

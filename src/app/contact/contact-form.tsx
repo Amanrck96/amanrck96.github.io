@@ -16,12 +16,13 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { Send } from 'lucide-react';
+import { profile } from '@/lib/data';
 
 const formSchema = z.object({
   name: z.string()
     .min(2, 'Name must be at least 2 characters')
     .max(100, 'Name must be less than 100 characters')
-    .regex(/^[a-zA-Z\s\-'\.]+$/, 'Name contains invalid characters'),
+    .regex(/^[a-zA-Z\s\-'.]+$/, 'Name contains invalid characters'),
   email: z.string()
     .email('Please enter a valid email address')
     .max(254, 'Email must be less than 254 characters')
@@ -48,32 +49,32 @@ export function ContactForm() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    // Use form reference instead of querySelector to ensure the button is found
     const submitButton = document.getElementById('contact-submit-button') as HTMLButtonElement;
     const originalText = submitButton?.textContent || 'Send Message';
-    
     try {
-      // Show loading state
       if (submitButton) {
         submitButton.disabled = true;
         submitButton.textContent = 'Sending...';
       }
 
-      // Use Formspree for static site deployment
-      const fsRes = await fetch('https://formspree.io/f/xdkogqpw', {
+      // Switch to FormSubmit to avoid 'Form not found' errors
+      const formSubmitUrl = `https://formsubmit.co/${profile.email}`;
+      const payload = new URLSearchParams({
+        name: values.name,
+        email: values.email,
+        mobile: values.mobile || '',
+        message: values.message,
+        _replyto: values.email,
+        _subject: `Portfolio Contact: ${values.name}`,
+      });
+
+      const fsRes = await fetch(formSubmitUrl, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/x-www-form-urlencoded',
           'Accept': 'application/json',
         },
-        body: JSON.stringify({
-          name: values.name,
-          email: values.email,
-          mobile: values.mobile || '',
-          message: values.message,
-          _replyto: values.email,
-          _subject: `Portfolio Contact: ${values.name}`,
-        }),
+        body: payload.toString(),
       });
 
       const fsData = await fsRes.json().catch(() => null);
@@ -91,9 +92,7 @@ export function ContactForm() {
       }
     } catch (error) {
       console.error('Error sending message:', error);
-      
       let errorMessage = 'Failed to send message. Please try again or contact me directly.';
-      
       if (error instanceof Error) {
         if (error.message.includes('NetworkError') || error.message.includes('fetch')) {
           errorMessage = 'Network error. Please check your connection and try again.';
@@ -101,7 +100,6 @@ export function ContactForm() {
           errorMessage = 'Request timed out. Please try again.';
         }
       }
-      
       toast({
         title: 'Error',
         description: errorMessage,
@@ -109,7 +107,6 @@ export function ContactForm() {
         duration: 7000,
       });
     } finally {
-      // Reset button state
       if (submitButton) {
         submitButton.disabled = false;
         submitButton.textContent = originalText;
@@ -121,12 +118,14 @@ export function ContactForm() {
     <Form {...form}>
       <form 
         onSubmit={form.handleSubmit(onSubmit)} 
-        action="https://formspree.io/f/xdkogqpw"
+        action={`https://formsubmit.co/${profile.email}`}
         method="POST"
         className="space-y-8"
       >
-        {/* Hidden fields for HTML fallback submissions and security */}
         <input type="hidden" name="_subject" value={`Portfolio Contact: ${form.getValues('name') || 'New Contact'}`} />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="https://amanrck96.github.io/contact?success=true" />
+        {/* Hidden fields for HTML fallback submissions and security */}
         <input type="hidden" name="_honeypot" value="" style={{ display: 'none' }} />
         <input type="hidden" name="_captcha" value="false" />
         <FormField
