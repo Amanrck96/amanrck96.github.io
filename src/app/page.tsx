@@ -16,7 +16,7 @@ export default function Home() {
       {homepageShowcase.showExperience && <ExperienceSection />}
       {homepageShowcase.showSkills && <SkillsSection />}
       {homepageShowcase.showProjects && <ProjectsSection />}
-      {homepageShowcase.showCertifications && <CertificationsSection />}
+      {homepageShowcase.showCertifications && <CertificationsSection showTitle={true} />}
       {homepageShowcase.showEducation && <EducationSection />}
 
       {homepageShowcase.showContactCard && (

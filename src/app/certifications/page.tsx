@@ -15,7 +15,7 @@ export default function CertificationsPage() {
             My credentials and qualifications from recognized institutions and organizations.
           </p>
         </div>
-        <CertificationsSection />
+        <CertificationsSection showTitle={false} />
       </div>
     </div>
   );

@@ -1,19 +1,19 @@
-'use client';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { certifications } from '@/lib/data';
 import { ExternalLink } from 'lucide-react';
-import { usePathname } from 'next/navigation';
 
-export function CertificationsSection() {
-  const pathname = usePathname();
-  
+interface CertificationsSectionProps {
+  showTitle?: boolean;
+}
+
+export function CertificationsSection({ showTitle = true }: CertificationsSectionProps) {
   return (
     <section id="certifications" className="w-full py-8">
       <div className="container mx-auto">
-        {/* When used on homepage, show title. On dedicated page, title is already shown */}
-        {pathname !== '/certifications' && (
+        {/* When showTitle is true, display the section title */}
+        {showTitle && (
           <>
             <h2 className="section-title">Professional Certifications</h2>
             <p className="section-subtitle mb-12">
