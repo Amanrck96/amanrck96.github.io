@@ -47,6 +47,14 @@ jobs:
       - name: Build with Next.js
         run: npm run build
         
+      - name: Upload build artifact (generic)
+        uses: actions/upload-artifact@v4
+        with:
+          name: nextjs-static-export
+          path: ./out
+          retention-days: 7
+          if-no-files-found: error
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
