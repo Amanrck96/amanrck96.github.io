@@ -22,6 +22,22 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'picsum.photos',
+      },
+      {
+        protocol: 'https',
+        hostname: 'firebasestorage.googleapis.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'storage.googleapis.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'instagram.fccu9-1.fna.fbcdn.net',
+      },
+      {
+        protocol: 'https',
+        hostname: 'scontent.cdninstagram.com',
       }
     ],
   },

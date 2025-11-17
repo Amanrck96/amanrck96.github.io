@@ -22,6 +22,9 @@ export function EducationSection() {
                             <CardTitle>{edu.degree}</CardTitle>
                             <CardDescription>{edu.institution}</CardDescription>
                             <p className="text-xs text-muted-foreground mt-1">{edu.year}</p>
+                            {edu.certificate && (
+                              <p className="text-xs text-muted-foreground mt-1">Certificate: {edu.certificate}</p>
+                            )}
                         </div>
                     </div>
                 </CardHeader>

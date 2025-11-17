@@ -8,7 +8,7 @@ Data Mapping & Analytics, Microsoft Excel, Data Visualization Programming & Auto
 - Project Portfolio: Display project descriptions, images, and links to live demos for EraBooking (https://erabooking.vercel.app/), Tanumaya Dhikary (https://tanumayadhikary.netlify.app/), and Tejaswini Dabade (https://tejaswinidabade.netlify.app/).
 - Professional Experience: Present a comprehensive overview of the user's career journey and significant achievements with optimized layout (two-column format).
 - Certification Display: Showcase professional certifications.
-- Resume Download: Include a download link for the resume (https://drive.google.com/file/d/1Jj_zEh0aF7NzIBmk7TVwsXO2FGhPbG2r/view?usp=sharing).
+- Resume Download: Include a download link for the resume (https://drive.google.com/file/d/1NotKmdn7M8iWBxhO8saQnkjWXb-KShms/view?usp=sharing).
 - Contact Form: Implement a contact form (Name, Email, Message, Send Message). Include contact information: email (Amanrck69@gmail.com), phone (+91-9547526440 / +91-8250522929), and address (S.N. Road, Near BSF Camp, Cooch Behar, West Bengal). Include Mobile Number input
 
 ## Style Guidelines:

@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import { ProfileImage } from '@/components/sections/profile-image';
 import { Button } from '@/components/ui/button';
 import { profile } from '@/lib/data';
 import { Download, Mail, MapPin, Phone } from 'lucide-react';
@@ -13,13 +13,12 @@ export function HeroSection() {
       <div className="container mx-auto grid grid-cols-1 items-center gap-12 py-12 md:grid-cols-2 lg:gap-20 md:py-20">
         <div className="flex flex-col items-center text-center md:items-start md:text-left fade-in-up">
           <div className="relative h-32 w-32 md:h-40 md:w-40 mb-6">
-            <Image
-              src={profile.profilePic}
+            <ProfileImage
+              fallbackSrc={profile.profilePic}
               alt={profile.name}
               width={160}
               height={160}
               className="rounded-full object-cover shadow-lg"
-              priority
             />
           </div>
           <h1 className="text-4xl font-extrabold tracking-tighter sm:text-5xl md:text-6xl">

@@ -19,7 +19,7 @@ const findImage = (id: string): ImagePlaceholder => {
 export const profile = {
   name: 'Aman Sah',
   title: 'Data Analyst & MIS Executive',
-  profilePic: 'https://scontent.cdninstagram.com/v/t39.30808-6/500309682_24224647873889571_847236585883311838_n.jpg?stp=c0.45.1080.1350a_dst-jpg_e35_s480x480_tt6&_nc_cat=105&ig_cache_key=MzEyODQ1MzEyODM3OTYxNjcyMg%3D%3D.3-ccb1-7&ccb=1-7&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTQ0MC5zZHIuQzMifQ%3D%3D&_nc_ohc=YBTZD2i1IvYQ7kNvwHwxl9I&_nc_oc=AdmIa58wZPGoBck3s0KmUxrbe0-QmNzHisJuwkDPtf0gg9J8rIRxER9lrdyjvEX6YtLBIBQbtX-dg78JLNH4X0Y1&_nc_ad=z-m&_nc_cid=1174&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=cO6MtSQh-Am401_ELPncHQ&oh=00_AfeVBRKdBjc-NPMXGH2NG8TF4KKAxbBMSEF4nGehapoZqw&oe=68FF06D2',
+  profilePic: 'https://scontent.cdninstagram.com/v/t39.30808-6/367427133_18281897443183076_3125590827938082817_n.jpg?stp=dst-jpg_e35_p480x480_tt6&_nc_cat=106&ig_cache_key=MzE2OTgyNjYxNzg3MTAxOTYyNw%3D%3D.3-ccb1-7&ccb=1-7&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTgwMC5zZHIuQzMifQ%3D%3D&_nc_ohc=nSvv2GdetNoQ7kNvwFWi1eZ&_nc_oc=AdmM2QT4ub4D6XepzX-ZOTyjlHN4QeYyNl2n7byD6vsVOAHUPkKq-HlOYH41kt-zY876Sjd2oJOApUJ_C6O0HVzs&_nc_ad=z-m&_nc_cid=1174&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=meVON7DxvTERhTbiy2OZ6Q&oh=00_AfhChWtFXbLT0T5No7HLsk_bPB1qlmzfxWmacH3oRMpOlg&oe=6920797D',
   location: 'Cooch Behar, West Bengal',
   email: 'Amanrck69@gmail.com',
   phone: ['+91-9547526440', '+91-8250522929'],
@@ -27,7 +27,7 @@ export const profile = {
     { name: 'LinkedIn', url: 'https://linkedin.com/in/amanrck69/', icon: Linkedin },
     { name: 'GitHub', url: 'https://amanrck96.github.io', icon: Github },
   ],
-  resumeUrl: 'https://drive.google.com/file/d/1YkPhc3eJm2Psoso9TdOgxz3YeIk-LGV4/view?usp=sharing',
+  resumeUrl: 'https://drive.google.com/file/d/1NotKmdn7M8iWBxhO8saQnkjWXb-KShms/view?usp=sharing',
   summary:
     'Results-driven Data Analyst & MIS Executive with 6+ years of experience in data analytics, MIS reporting, and business intelligence. Expert in Advance Excel, Power BI, VBA, SQL, and Tableau, with a proven ability to deliver automated reporting solutions, improve operational efficiency, and enhance data-driven decision-making. Adept at predictive analytics, HR analytics, and process optimization.',
 };
@@ -97,7 +97,18 @@ export const experiences = [
     role: 'MIS Executive',
     company: 'Poddar Car World',
     location: 'Jalpaiguri',
-    period: 'Sep 2017 – Jun 2022',
+    period: 'Sep 2021 – Apr 2022',
+    tasks: [
+      'Managed MIS operations for sales, inventory, and service performance.',
+      'Created automated Advance Excel dashboards to track key business metrics.',
+      'Prepared monthly sales, service, and spare parts performance reports.',
+    ],
+  },
+  {
+    role: 'MIS Executive',
+    company: 'NEXA (Sevoke Motors)',
+    location: 'Cooch Behar',
+    period: 'May 2019 – Jul 2021',
     tasks: [
       'Managed MIS operations for sales, inventory, and service performance.',
       'Created automated Advance Excel dashboards to track key business metrics.',
@@ -213,9 +224,10 @@ export const certifications = [
 
 export const education = [
   {
-    degree: '12th - Accounting & Finance',
+    degree: '12th Grade - Accounting & Finance',
     institution: 'Cooch Behar Shree Hindi Vidyalaya',
     year: '2011',
+    certificate: 'Higher Secondary Certificate',
   },
   {
     degree: "Bachelor's Degree - Bachelor of Computer Applications",
