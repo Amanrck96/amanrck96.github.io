@@ -3,12 +3,20 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { experiences } from '@/lib/data';
 import { CheckCircle2 } from 'lucide-react';
 
-export function ExperienceSection() {
+interface ExperienceSectionProps {
+  showTitle?: boolean;
+}
+
+export function ExperienceSection({ showTitle = true }: ExperienceSectionProps) {
   return (
     <section id="experience" className="w-full bg-card">
       <div className="container mx-auto">
-        <h2 className="section-title">Professional Experience</h2>
-        <p className="section-subtitle">A comprehensive overview of my career journey and significant achievements.</p>
+        {showTitle && (
+          <>
+            <h2 className="section-title">Professional Experience</h2>
+            <p className="section-subtitle">A comprehensive overview of my career journey and significant achievements.</p>
+          </>
+        )}
         <div className="mt-12 grid gap-8 md:grid-cols-2">
             {experiences.map((exp, index) => (
                 <div key={index} className="fade-in-up" style={{ animationDelay: `${index * 0.15}s` }}>
