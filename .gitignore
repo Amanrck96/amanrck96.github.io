@@ -1,6 +1,13 @@
 # Dependencies
 node_modules/
 package-lock.json
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
 
 # Environment variables and secrets
 .env
@@ -8,6 +15,7 @@ package-lock.json
 .env.*.local
 *.config.js
 config.js
+.env*
 
 # IDE specific files
 .idea/
@@ -28,3 +36,27 @@ Thumbs.db
 dist/
 build/
 out/
+/.next/
+/build
+
+# testing
+/coverage
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# firebase
+firebase-debug.log
+firestore-debug.log
+.genkit/*
+*.pem
