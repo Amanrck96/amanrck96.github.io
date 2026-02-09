@@ -19,7 +19,7 @@ const findImage = (id: string): ImagePlaceholder => {
 export const profile = {
   name: 'Aman Sah',
   title: 'Data Analyst & MIS Executive',
-  profilePic: 'https://scontent.cdninstagram.com/v/t39.30808-6/367427133_18281897443183076_3125590827938082817_n.jpg?stp=dst-jpg_e35_p480x480_tt6&_nc_cat=106&ig_cache_key=MzE2OTgyNjYxNzg3MTAxOTYyNw%3D%3D.3-ccb1-7&ccb=1-7&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTgwMC5zZHIuQzMifQ%3D%3D&_nc_ohc=nSvv2GdetNoQ7kNvwFWi1eZ&_nc_oc=AdmM2QT4ub4D6XepzX-ZOTyjlHN4QeYyNl2n7byD6vsVOAHUPkKq-HlOYH41kt-zY876Sjd2oJOApUJ_C6O0HVzs&_nc_ad=z-m&_nc_cid=1174&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=meVON7DxvTERhTbiy2OZ6Q&oh=00_AfhChWtFXbLT0T5No7HLsk_bPB1qlmzfxWmacH3oRMpOlg&oe=6920797D',
+  profilePic: '/profile.jpg',
   location: 'Cooch Behar, West Bengal',
   email: 'Amanrck69@gmail.com',
   phone: ['+91-9547526440', '+91-8250522929'],
