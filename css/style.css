@@ -29,7 +29,12 @@ body {
     background: var(--background);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 600;
     line-height: 1.3;
     margin-bottom: 1rem;
@@ -116,7 +121,7 @@ section {
     position: relative;
 }
 
-.navbar-nav .nav-link:hover, 
+.navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
     color: var(--secondary-color);
 }
@@ -256,12 +261,19 @@ section {
 }
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
         transform: translateY(0) translateX(-50%);
     }
+
     40% {
         transform: translateY(-20px) translateX(-50%);
     }
+
     60% {
         transform: translateY(-10px) translateX(-50%);
     }
@@ -296,15 +308,7 @@ section {
 }
 
 .hero:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('../images/pattern.svg');
-    opacity: 0.05;
-    z-index: 0;
+    content: none;
 }
 
 .hero-content {
@@ -930,7 +934,8 @@ footer {
     font-weight: 500;
 }
 
-.filter-button:hover, .filter-button.active {
+.filter-button:hover,
+.filter-button.active {
     background: var(--secondary-color);
     color: var(--light-text);
 }
@@ -1226,7 +1231,9 @@ footer {
     margin-bottom: 0;
 }
 
-.academic-section, .certifications-section, .courses-section {
+.academic-section,
+.certifications-section,
+.courses-section {
     padding: 4rem 0;
 }
 
@@ -1654,7 +1661,8 @@ section {
     margin-bottom: 10px;
 }
 
-.certification-date, .certification-id {
+.certification-date,
+.certification-id {
     color: var(--secondary-color);
     font-size: 0.9rem;
     margin-bottom: 5px;
@@ -1903,7 +1911,7 @@ section {
     .hero-text h1 {
         font-size: 3rem;
     }
-    
+
     .hero-text p {
         font-size: 1.1rem;
     }
@@ -1913,30 +1921,30 @@ section {
     .hero-text h1 {
         font-size: 2.5rem;
     }
-    
+
     .hero-text p {
         font-size: 1rem;
     }
-    
+
     .profile-image-container {
         width: 200px;
         height: 200px;
     }
-    
+
     .section-title h2 {
         font-size: 1.8rem;
     }
-    
+
     .timeline-title,
     .education-degree,
     .project-title {
         font-size: 1.3rem;
     }
-    
+
     .achievement-number {
         font-size: 2rem;
     }
-    
+
     .accessibility-links {
         justify-content: center;
         margin-top: 1rem;
@@ -1947,7 +1955,7 @@ section {
     .hamburger {
         display: block;
     }
-    
+
     .nav-links {
         position: fixed;
         left: -100%;
@@ -1960,41 +1968,41 @@ section {
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
         padding: 2rem 0;
     }
-    
+
     .nav-links.active {
         left: 0;
     }
-    
+
     .nav-links li {
         margin: 1.5rem 0;
     }
-    
+
     .hero h1 {
         font-size: 3rem;
     }
-    
+
     .hero h2 {
         font-size: 1.8rem;
     }
-    
+
     .about-content {
         grid-template-columns: 1fr;
     }
-    
+
     .about-image {
         margin-bottom: 2rem;
     }
-    
+
     .footer-content {
         flex-direction: column;
         gap: 1.5rem;
         text-align: center;
     }
-    
+
     .footer-links {
         justify-content: center;
     }
-    
+
     .social-links {
         justify-content: center;
     }
@@ -2004,20 +2012,20 @@ section {
     .hero h1 {
         font-size: 2.5rem;
     }
-    
+
     .hero h2 {
         font-size: 1.5rem;
     }
-    
+
     .cta-buttons {
         flex-direction: column;
         gap: 1rem;
     }
-    
+
     .cta-button {
         width: 100%;
     }
-    
+
     .expertise-areas,
     .skills-grid,
     .featured-projects-grid,
@@ -2034,6 +2042,7 @@ section {
         opacity: 0;
         transform: translateY(-20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -2045,6 +2054,7 @@ section {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -2055,6 +2065,7 @@ section {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
